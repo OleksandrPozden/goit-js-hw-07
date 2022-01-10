@@ -7,13 +7,9 @@ const gallery = document.querySelector(".gallery");
 const imagesMarkup = generateImagesMarkup(galleryItems);
 
 gallery.insertAdjacentHTML("beforeend", imagesMarkup);
-gallery.addEventListener("click", onGalleryClick);
 
-var lightBox = new SimpleLightbox('.gallery a', { captionsData: "alt", captionDelay:250});
-function onGalleryClick(e){
-    e.preventDefault();
-    console.log("gallery click")
-}
+let lightBox = new SimpleLightbox('.gallery a', { captionsData: "alt", captionDelay:250});
+
 function generateImagesMarkup(images) {
   return images
     .map((img) => {
